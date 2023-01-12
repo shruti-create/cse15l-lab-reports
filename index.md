@@ -1,3 +1,2 @@
 # Shruti Bhamidipati
---- 
 Hello World! :)
