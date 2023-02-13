@@ -1,4 +1,4 @@
-# Week 3 Lab Report
+# Week 4 Lab Report
 ## Part 1: 
 Here is the code for my StringServer (StringServer.java): 
 <img width="1512" alt="Screenshot 2023-01-30 at 11 42 14 AM" src="https://user-images.githubusercontent.com/68794846/215579556-cbbbdcdf-4b20-410a-af3f-2c2523d33961.png">
