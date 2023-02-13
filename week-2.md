@@ -1,4 +1,4 @@
-# Week 1 Lab Report
+# Week 2 Lab Report
 *This is a tutorial on logging into a course specific account on ieng6*
 
 Before logging on make sure you know your username/password and have Visual Studio Code downloaded. 
