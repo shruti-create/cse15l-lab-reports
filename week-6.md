@@ -115,12 +115,96 @@ Example Use 2:
  ~~~
 As you can see above, we were able to narrow down our search even more when we looked with the pattern "HistoryM" as it then only gave us the history files for the places with names starting with M. 
 
-## Option 3: grep -c 
+## Option 3: grep -w <"word"> 
 
-Source: https://linuxcommand.org/lc3_man_pages/grep1.html
+Source: https://www.ibm.com/docs/en/aix/7.2?topic=g-grep-command#grep__row-d3e144005
 
-Function: This option causes the Grep command to count the number of files within the given directory how many lines there are in a given file. It is useful in finding out how many files there are when trying to look at how many there should be after they're copied into the system. 
+Function: This option causes the Grep command to find any file/directory with the word in it and return those file names. It is case sensitive to the word. This is useful when you're looking for a specific type of file/directory and can find it with a specific word. 
 
 Example Use 1:
 ~~~
+  $ cd berlitz2
+  $ ls|grep -w "History"
+  Algarve-History.txt
+  Amsterdam-History.txt
+  Athens-History.txt
+  Bahamas-History.txt
+  Bali-History.txt
+  Barcelona-History.txt
+  Beijing-History.txt
+  Berlin-History.txt
+  Budapest-History.txt
+  California-History.txt
+  Canada-History.txt
+  CanaryIslands-History.txt
+  Cancun-History.txt
+  China-History.txt
+  Costa-History.txt
+  CostaBlanca-History.txt
+  Crete-History.txt
+  Cuba-History.txt
+  Nepal-History.txt
+  NewOrleans-History.txt
+  Poland-History.txt
+  Portugal-History.txt
+  PuertoRico-History.txt
+  Vallarta-History.txt
+~~~ 
+In this example, we can see that all the files with "History" are shown, which would be useful if we're looking for only history files. 
+
+Example Use 2:
+~~~
+  $ cd berlitz2
+  $ ls|grep -w "California"
+  California-History.txt
+  California-WhatToDo.txt
+  California-WhereToGo.txt
+~~~
+In this example, we can see that all the files with "California are shown, which would be useful if we're only looking for information on California. 
   
+## Option 4: grep -i <"word">
+Source: https://www.gnu.org/savannah-checkouts/gnu/grep/manual/grep.html
+
+Function: This option causes the Grep command to find any file with the word in it and return those file/directory names. The reason this is different from the last one is that it is not case sensitive in finding. This is useful when you're looking for a specific type of file/directory and can find it with a specific word. 
+
+Example Use 1:
+~~~
+ $ cd travel_guides
+ $ ls|grep -i "Berlitz"
+ berlitz1
+ berlitz2
+~~~
+In this example, it found both the directories, even though we searched for the word "Berlitz", which is the capitalized version of the directory. This would very useful if we forget the exact cases of the directories/files we look for. 
+
+Example Use 2:
+~~~
+ $ cd travel_guides
+ $ cd berlitz1
+ $ ls|grep -i "history"
+ HistoryDublin.txt
+ HistoryEdinburgh.txt
+ HistoryEgypt.txt
+ HistoryFWI.txt
+ HistoryFrance.txt
+ HistoryGreek.txt
+ HistoryHawaii.txt
+ HistoryHongKong.txt
+ HistoryIbiza.txt
+ HistoryIndia.txt
+ HistoryIsrael.txt
+ HistoryIstanbul.txt
+ HistoryItaly.txt
+ HistoryJamaica.txt
+ HistoryJapan.txt
+ HistoryJerusalem.txt
+ HistoryLakeDistrict.txt
+ HistoryLasVegas.txt
+ HistoryMadeira.txt
+ HistoryMadrid.txt
+ HistoryMalaysia.txt
+ HistoryMallorca.txt
+~~~
+With this example, we can see that it found all the files with the word "history" in it, even though the files actually have the word "History" in them, as it is not case sensitive.  
+
+---
+As you can see, those are 4 options with the grep command. They're all very useful in finding files and words, but these are not the only options. Hopefully this was enough information for you to find some files/directories!
