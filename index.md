@@ -4,3 +4,6 @@
 
 ## Lab Report 2: 
 [Running StringServer and JUnit Testing for Bugs](https://shruti-create.github.io/cse15l-lab-reports/week-4.html)
+
+## Lab Report 3: 
+[Some grep Command Line Options](https://shruti-create.github.io/cse15l-lab-reports/week-6.html)
