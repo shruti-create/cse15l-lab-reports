@@ -1,4 +1,7 @@
 # Week 8 Lab Report
+
+## Completing the Competition Tasks
+
 This is a report on how I completed the competition tasks outlined below: 
 
 ## Task 4: Log into ieng6
