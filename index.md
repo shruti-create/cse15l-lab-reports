@@ -7,3 +7,6 @@
 
 ## Lab Report 3: 
 [Some grep Command Line Options](https://shruti-create.github.io/cse15l-lab-reports/week-6.html)
+
+## Lab Report 4: 
+[Completing the Competition Tasks](https://shruti-create.github.io/cse15l-lab-reports/week-8.html)
