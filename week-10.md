@@ -43,7 +43,7 @@ Abernathy       Berk            Castro          Fletcher        Kauffman        
 ```
 As you can see in this example, we used the command to get the directories under the directory OUP and when looking at the directories under the directory OUP with the command ls, we see that they're the same. 
 
-# Option 2: find . -name < Name of file to search for >
+## Option 2: find . -name < Name of file to search for >
 Source: https://www.tecmint.com/35-practical-examples-of-linux-find-command/ 
 
 Function: This option allows the find command to find all the files with the given in the current working directory. This is useful when you're looking for a single file and you know what it's called, so you can use this command to easily search for it. 
@@ -71,7 +71,7 @@ Example Use 2:
 ```
 As you can see above, we could find the CH4.txt from berk when we searched exactly CH4.txt, however not when we searched ch4.txt. So, this shows how this is only useful when you know exactly the name of the file you are looking for. 
 
-# Option 3: find . -iname < Name of file to search for >
+## Option 3: find . -iname < Name of file to search for >
 Source: https://www.tecmint.com/35-practical-examples-of-linux-find-command/
 
 Function: This option allows the find command to find any file with the name of the file to search for, however, it is different from the other command, as it doesn't need it to be the exact capitalization to search for it. Therefore, you can search for any file without exactly knowing what needs to be and doesn't need to be capitalized in the file title.
@@ -94,7 +94,7 @@ Example Use 2:
 ```
 As you can see in this example, it found the directory for me, so this command isn't limited to only files. Also, the capitalization was off in two parts of the search, but the command still found the directory, showing how this command could be beneficial when searching files and directories. 
 
-# Option 4: find . -name < file name > -exec rm -i {} \;
+## Option 4: find . -name < file name > -exec rm -i {} \;
 Source: https://www.geeksforgeeks.org/find-command-in-linux-with-examples/
 
 Function: This option allows the find command to find a file and then delete it from the directory. This is useful as it allows people to search and delete for specific files with the option on just one command. 
