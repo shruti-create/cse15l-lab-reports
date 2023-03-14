@@ -10,3 +10,6 @@
 
 ## Lab Report 4: 
 [Completing the Competition Tasks](https://shruti-create.github.io/cse15l-lab-reports/week-8.html)
+
+## Lab Report 5: 
+[Some find Command Line Options](https://shruti-create.github.io/cse15l-lab-reports/week-10.html)
