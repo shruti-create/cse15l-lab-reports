@@ -72,7 +72,7 @@ i
 "i" to insert and pressing < escape > and then ":w" to write into the code and then ":q" to quit vim. 
 <img width="369" alt="Screenshot 2023-02-27 at 12 17 12 PM" src="https://user-images.githubusercontent.com/68794846/221674520-d0c8aad1-1fd9-48b1-ba01-3173dd421561.png">
 
-In the vim after I pressed "i" and edited the code. To do this, after I pressed "i" I clicked on the line that had the issue and fixed the line. Here is the fixed image: 
+In the vim after I pressed "i" and edited the code. To do this, after I pressed "i" I moved my cursor onto the line that had the bug and clicked and was able to access and fix the line. There are no other commands and there was no way to search for the line. I had to just click on where the issue was and fix it accordingly. Here is the fixed image: 
 
 <img width="990" alt="Screenshot 2023-02-27 at 11 32 44 AM" src="https://user-images.githubusercontent.com/68794846/221664391-17619e23-4ca8-4c03-96be-94a50bba202b.png">
 
