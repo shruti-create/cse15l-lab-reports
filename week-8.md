@@ -8,7 +8,7 @@ This is a report on how I completed the competition tasks outlined below:
 
 For this task, I ran the command: 
 ```
-ssh cs15lwi23ate@ieng6-202.ucsd.edu 
+$ ssh cs15lwi23ate@ieng6-202.ucsd.edu 
 ```
 
 The account logged in immediately. This is because I had generated an SSH key for ieng6 and now I do not need to put in a password to log in everytime. 
@@ -21,7 +21,7 @@ Fork the code into your own repository first.
 
 For this task I used the command:
 ```
-git clone
+$ git clone
 ```
 
 I cloned the link under the SSH tab. This is because I had generated an SSH key for github earlier to access and write data into repositories from my computer. Now I can access github from my course specific account on ieng6.
@@ -29,7 +29,7 @@ I cloned the link under the SSH tab. This is because I had generated an SSH key 
 I had already used git clone earlier, 8 lines above this code, so I pressed the up arrow 8 times to get it to appear on my line. 
 keys pressed for git clone: 
 ```
-< up > < up > < up > < up > < up > < up > < up > < up > < enter >
+$ < up > < up > < up > < up > < up > < up > < up > < up > < enter >
 ```
 <img width="930" alt="Screenshot 2023-02-27 at 11 49 55 AM" src="https://user-images.githubusercontent.com/68794846/221667902-53ffbfbd-705a-41de-bca8-1e774c40c94c.png">
 
@@ -37,13 +37,13 @@ keys pressed for git clone:
 
 For this task, since I had already run these tests the last time I was doing the tasks, I had the following commands: 
 ```
-javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java
-java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ListExamplesTests 
+$ javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java
+$ java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ListExamplesTests 
 ```
 much higher up in my search history already (8 commands up). I accessed them with these keys pressed: 
 ```
-< up > < up > < up > < up > < up > < up > < up > < up > < enter > 
-< up > < up > < up > < up > < up > < up > < up > < up > < enter > 
+$ < up > < up > < up > < up > < up > < up > < up > < up > < enter > 
+$ < up > < up > < up > < up > < up > < up > < up > < up > < enter > 
 ```
 respectively.
 
@@ -59,15 +59,15 @@ the failures:
 
 For this task, I opened up the ListExamples.java file through vim (as I was shown by the tutor) using this command: 
 ```
-vim ListExamples.java
+$ vim ListExamples.java
 ```
 
 Then, I corrected the code by doing the following commands: 
 ```
-i
-< escape >
-:w 
-:q
+$ i
+$ < escape >
+$ :w 
+$ :q
 ```
 "i" to insert and pressing < escape > and then ":w" to write into the code and then ":q" to quit vim. 
 <img width="369" alt="Screenshot 2023-02-27 at 12 17 12 PM" src="https://user-images.githubusercontent.com/68794846/221674520-d0c8aad1-1fd9-48b1-ba01-3173dd421561.png">
@@ -80,21 +80,21 @@ In the vim after I pressed "i" and edited the code. To do this, after I pressed 
 
 Now in order to access the 
 ```
-javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java
+$ javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java
 ```
 command, I had to go up 3 lines, so I pressed these keys and accessed it: 
 ```
-< up > < up > < up > < enter>
+$ < up > < up > < up > < enter>
 ```
 
 Then, to access the 
 
 ```
-java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ListExamplesTests
+$ java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ListExamplesTests
 ```
 command, I had to also go up 3 lines, so I pressed these keys to access it: 
 ```
-< up > < up > < up > < enter>
+$ < up > < up > < up > < enter>
 ```
 
 <img width="963" alt="Screenshot 2023-02-27 at 12 19 12 PM" src="https://user-images.githubusercontent.com/68794846/221675516-cf323535-8d6f-4f11-9cf3-87f3a399bd52.png">
@@ -103,9 +103,9 @@ command, I had to also go up 3 lines, so I pressed these keys to access it:
 
 Finally to commit and push into my Github account, I needed to use the following commands: 
 ```
-git add ListExamples.java
-git commit -m "updated file"
-git push 
+$ git add ListExamples.java
+$ git commit -m "updated file"
+$ git push 
 ```
 that I had used already, however, as they were many commands before and these commands were short anyway, instead of going up in my search history, I just manually inputted these commands. 
 
