@@ -1,10 +1,10 @@
-## Week 10 Lab Report
-# Researching the find Command-line Options
+# Week 10 Lab Report
+## Doing Lab 3 in a Different Way: Researching the find Command-line Options instead of grep
 
-# Option 1: find . -type d 
+## Option 1: find . -type d 
 Source: https://linuxize.com/post/how-to-find-files-in-linux-using-the-command-line/
 
-Function: This option causes the find command to find all the directories under the current working directory. This is useful if you are looking for the different directories under the current directory. For example, if you are trying to find a certain type of file, you could use this to see the directories and figure out where the file could be organized with that information
+Function: This option causes the find command to find all the directories under the current working directory. This is useful if you are looking for the different directories under the current directory. For example, if you are trying to find a certain type of file, you could use this to see the directories and figure out where the file could be organized with that information. This could also be used with a different letter than "d", as if the letter was "f" instead, then find would look for files. 
 
 Example Use 1:
 ```
@@ -24,7 +24,7 @@ $ find . -type d
 ./travel_guides/berlitz1
 ./travel_guides/berlitz2
 ```
-As you can see in the example, it found all the directories inside the working directory, which include non-fiction and travel_guides and all the directories under them. 
+As you can see in the example, it found all the directories inside the working directory, which include non-fiction and travel_guides and all the directories under them. This command is useful as it shows all the directories under the specific directory, which differentiates it from the command "ls", as "ls" only shows the directories directly under the working directory and not the ones under those. 
 
 Example Use 2:
 ```
@@ -41,159 +41,121 @@ $ find . -type d
 $ ls
 Abernathy       Berk            Castro          Fletcher        Kauffman        Rybczynski
 ```
-As you can see in this example, we used the command to see the directories under the directory OUP, 
+As you can see in this example, we used the command to get the directories under the directory OUP and when looking at the directories under the directory OUP with the command ls, we see that they're the same. 
 
-# Option 2: grep -e <"Pattern">
-Source: https://linuxcommand.org/lc3_man_pages/grep1.html
+# Option 2: find . -name < Name of file to search for >
+Source: https://www.tecmint.com/35-practical-examples-of-linux-find-command/ 
 
-Function: This option causes the Grep command to list out all the files/directories that have the same properties as the pattern written after the -e in the command. This is useful if you're looking through many files, but really are searching for files that aare all with the same type of starting pattern.
+Function: This option allows the find command to find all the files with the given in the current working directory. This is useful when you're looking for a single file and you know what it's called, so you can use this command to easily search for it. 
 
 Example Use 1:
-
- $ cd skill-demo1-data
+```
+ $ cd docsearch
  $ cd written_2
- $ cd travel_guides
- $ cd berlitz1
+ $ cd non-fiction
+ $ cd OUP
+ $ cd Berk
  $ ls
- HandRHawaii.txt         HistoryFWI.txt          HistoryMalaysia.txt     IntroLakeDistrict.txt   WhatToIndia.txt           WhereToGreek.txt
-HandRHongKong.txt       HistoryFrance.txt       HistoryMallorca.txt     IntroLasVegas.txt       WhatToIsrael.txt        WhereToHawaii.txt
-HandRIbiza.txt          HistoryGreek.txt        IntroDublin.txt         IntroLosAngeles.txt     WhatToIstanbul.txt      WhereToHongKong.txt
-HandRIsrael.txt         HistoryHawaii.txt       IntroEdinburgh.txt      IntroMadeira.txt        WhatToItaly.txt         WhereToIbiza.txt
-HandRIstanbul.txt       HistoryHongKong.txt     IntroEgypt.txt          IntroMadrid.txt         WhatToJamaica.txt       WhereToIndia.txt
-HandRJamaica.txt        HistoryIbiza.txt        IntroFWI.txt            IntroMalaysia.txt       WhatToJapan.txt         WhereToIsrael.txt
-HandRJerusalem.txt      HistoryIndia.txt        IntroFrance.txt         IntroMallorca.txt       WhatToLakeDistrict.txt  WhereToIstanbul.txt
-HandRLakeDistrict.txt   HistoryIsrael.txt       IntroGreek.txt          JungleMalaysia.txt      WhatToLasVegas.txt      WhereToItaly.txt
-HandRLasVegas.txt       HistoryIstanbul.txt     IntroHongKong.txt       WhatToDublin.txt        WhatToLosAngeles.txt    WhereToJapan.txt
-HandRLisbon.txt         HistoryItaly.txt        IntroIbiza.txt          WhatToEdinburgh.txt     WhatToMadeira.txt       WhereToJerusalem.txt
-HandRLosAngeles.txt     HistoryJamaica.txt      IntroIndia.txt          WhatToEgypt.txt         WhatToMalaysia.txt      WhereToLakeDistrict.txt
-HandRMadeira.txt        HistoryJapan.txt        IntroIsrael.txt         WhatToFWI.txt           WhatToMallorca.txt      WhereToLosAngeles.txt
-HandRMadrid.txt         HistoryJerusalem.txt    IntroIstanbul.txt       WhatToFrance.txt        WhereToDublin.txt       WhereToMadeira.txt
-HandRMallorca.txt       HistoryLakeDistrict.txt IntroItaly.txt          WhatToGreek.txt         WhereToEdinburgh.txt    WhereToMadrid.txt
-HistoryDublin.txt       HistoryLasVegas.txt     IntroJamaica.txt        WhatToHawaii.txt        WhereToEgypt.txt        WhereToMalaysia.txt
-HistoryEdinburgh.txt    HistoryMadeira.txt      IntroJapan.txt          WhatToHongKong.txt      WhereToFWI.txt          WhereToMallorca.txt
-HistoryEgypt.txt        HistoryMadrid.txt       IntroJerusalem.txt      WhatToIbiza.txt         WhereToFrance.txt
- $ ls|grep -e "History"
- HistoryDublin.txt
- HistoryEdinburgh.txt
- HistoryEgypt.txt
- HistoryFWI.txt
- HistoryFrance.txt
- HistoryGreek.txt
- HistoryHawaii.txt
- HistoryHongKong.txt
- HistoryIbiza.txt
- HistoryIndia.txt
- HistoryIsrael.txt
- HistoryIstanbul.txt
- HistoryItaly.txt
- HistoryJamaica.txt
- HistoryJapan.txt
- HistoryJerusalem.txt
- HistoryLakeDistrict.txt
- HistoryLasVegas.txt
- HistoryMadeira.txt
- HistoryMadrid.txt
- HistoryMalaysia.txt
- HistoryMallorca.txt
-As you can see above, there were many files, but after using the command, we were able to narrow the search down to a couple files. In this case, we were looking for the history files and with the -e, we were able to find them.
+ CH4.txt ch1.txt ch2.txt ch7.txt
+ $ find . -name ch2.txt
+ ./ch2.txt
+```
+As you can see above, there were many files, but after we used the find command, we were able to find the exact file we needed: the ch2.txt. This was very beneficial as we knew the file we needed and so we could easily get it. 
 
 Example Use 2:
+```
+ $ cd Berk
+ $ find . -name ch4.txt
+ $ find . -name CH4.txt
+ ./CH4.txt
+```
+As you can see above, we could find the CH4.txt from berk when we searched exactly CH4.txt, however not when we searched ch4.txt. So, this shows how this is only useful when you know exactly the name of the file you are looking for. 
 
- $ cd skill-demo1-data
+# Option 3: find . -iname < Name of file to search for >
+Source: https://www.tecmint.com/35-practical-examples-of-linux-find-command/
+
+Function: This option allows the find command to find any file with the name of the file to search for, however, it is different from the other command, as it doesn't need it to be the exact capitalization to search for it. Therefore, you can search for any file without exactly knowing what needs to be and doesn't need to be capitalized in the file title.
+
+Example Use 1:
+```
+  $ cd Berk
+  $ find . -iname ch4.txt
+  ./CH4.txt
+```
+In this example, we can see that even though I didn't search for the exact name of the file (the capitalization was off), it still found the file for me. This command would be beneficial when you want to search for a file that you don't exactly know the capitalization for. 
+
+Example Use 2:
+```
+  $ cd written_2
+  $ ls
+  non-fiction     travel_guides
+  $ find . -iname Travel_Guides 
+  ./travel_guides
+```
+As you can see in this example, it found the directory for me, so this command isn't limited to only files. Also, the capitalization was off in two parts of the search, but the command still found the directory, showing how this command could be beneficial when searching files and directories. 
+
+# Option 4: find . -name < file name > -exec rm -i {} \;
+Source: https://www.geeksforgeeks.org/find-command-in-linux-with-examples/
+
+Function: This option allows the find command to find a file and then delete it from the directory. This is useful as it allows people to search and delete for specific files with the option on just one command. 
+
+Example Use 1:
+```
+ $ cd travel_guides
+ $ cd berlitz2
+ $ ls
+Algarve-History.txt             Bali-History.txt                Budapest-History.txt            China-WhereToGo.txt             NewOrleans-History.txt
+Algarve-Intro.txt               Bali-WhatToDo.txt               Budapest-WhatToDo.txt           Costa-History.txt               Paris-WhatToDo.txt
+Algarve-WhatToDo.txt            Bali-WhereToGo.txt              Budapest-WhereoGo.txt           Costa-WhatToDo.txt              Paris-WhereToGo.txt
+Algarve-WhereToGo.txt           Barcelona-History.txt           California-History.txt          Costa-WhereToGo.txt             Poland-History.txt
+Amsterdam-History.txt           Barcelona-WhatToDo.txt          California-WhatToDo.txt         CostaBlanca-History.txt         Poland-WhatToDo.txt
+Amsterdam-Intro.txt             Barcelona-WhereToGo.txt         California-WhereToGo.txt        CostaBlanca-WhatToDo.txt        Portugal-History.txt
+Amsterdam-WhatToDo.txt          Beijing-History.txt             Canada-History.txt              Crete-History.txt               Portugal-WhatToDo.txt
+Amsterdam-WhereToGo.txt         Beijing-WhatToDo.txt            Canada-WhereToGo.txt            Crete-WhatToDo.txt              Portugal-WhereToGo.txt
+Athens-History.txt              Beijing-WhereToGo.txt           CanaryIslands-History.txt       Crete-WhereToGo.txt             PuertoRico-History.txt
+Athens-Intro.txt                Berlin-History.txt              CanaryIslands-WhatToDo.txt      CstaBlanca-WhereToGo.txt        PuertoRico-WhatToDo.txt
+Athens-WhatToDo.txt             Berlin-WhatToDo.txt             CanaryIslands-WhereToGo.txt     Cuba-History.txt                PuertoRico-WhereToGo.txt
+Athens-WhereToGo.txt            Berlin-WhereToGo.txt            Cancun-History.txt              Cuba-WhatToDo.txt               Vallarta-History.txt
+Bahamas-History.txt             Bermuda-WhatToDo.txt            Cancun-WhatToDo.txt             Cuba-WhereToGo.txt              Vallarta-WhatToDo.txt
+Bahamas-Intro.txt               Bermuda-WhereToGo.txt           Cancun-WhereToGo.txt            Nepal-History.txt               Vallarta-WhereToGo.txt
+Bahamas-WhatToDo.txt            Bermuda-history.txt             China-History.txt               Nepal-WhatToDo.txt
+Bahamas-WhereToGo.txt           Boston-WhereToGo.txt            China-WhatToDo.txt              Nepal-WhereToGo.txt
+ $ find . -name Algarve-History.txt -exec rm -i {} \; 
+ remove ./Algarve-History.txt? Y
+ $ ls
+Algarve-Intro.txt               Bali-WhatToDo.txt               Budapest-WhatToDo.txt           Costa-History.txt               Paris-WhatToDo.txt
+Algarve-WhatToDo.txt            Bali-WhereToGo.txt              Budapest-WhereoGo.txt           Costa-WhatToDo.txt              Paris-WhereToGo.txt
+Algarve-WhereToGo.txt           Barcelona-History.txt           California-History.txt          Costa-WhereToGo.txt             Poland-History.txt
+Amsterdam-History.txt           Barcelona-WhatToDo.txt          California-WhatToDo.txt         CostaBlanca-History.txt         Poland-WhatToDo.txt
+Amsterdam-Intro.txt             Barcelona-WhereToGo.txt         California-WhereToGo.txt        CostaBlanca-WhatToDo.txt        Portugal-History.txt
+Amsterdam-WhatToDo.txt          Beijing-History.txt             Canada-History.txt              Crete-History.txt               Portugal-WhatToDo.txt
+Amsterdam-WhereToGo.txt         Beijing-WhatToDo.txt            Canada-WhereToGo.txt            Crete-WhatToDo.txt              Portugal-WhereToGo.txt
+Athens-History.txt              Beijing-WhereToGo.txt           CanaryIslands-History.txt       Crete-WhereToGo.txt             PuertoRico-History.txt
+Athens-Intro.txt                Berlin-History.txt              CanaryIslands-WhatToDo.txt      CstaBlanca-WhereToGo.txt        PuertoRico-WhatToDo.txt
+Athens-WhatToDo.txt             Berlin-WhatToDo.txt             CanaryIslands-WhereToGo.txt     Cuba-History.txt                PuertoRico-WhereToGo.txt
+Athens-WhereToGo.txt            Berlin-WhereToGo.txt            Cancun-History.txt              Cuba-WhatToDo.txt               Vallarta-History.txt
+Bahamas-History.txt             Bermuda-WhatToDo.txt            Cancun-WhatToDo.txt             Cuba-WhereToGo.txt              Vallarta-WhatToDo.txt
+Bahamas-Intro.txt               Bermuda-WhereToGo.txt           Cancun-WhereToGo.txt            Nepal-History.txt               Vallarta-WhereToGo.txt
+Bahamas-WhatToDo.txt            Bermuda-history.txt             China-History.txt               Nepal-WhatToDo.txt
+Bahamas-WhereToGo.txt           Boston-WhereToGo.txt            China-WhatToDo.txt              Nepal-WhereToGo.txt
+Bali-History.txt                Budapest-History.txt            China-WhereToGo.txt             NewOrleans-History.txt
+```
+As you can see in this example, the Algarve-History.txt file was deleted from the directory through the single command. This is useful when you want to delete a specific file and know what it's called.
+
+Example Use 2:
+```
  $ cd written_2
- $ cd travel_guides
- $ cd berlitz1
- $ ls|grep -e "HistoryM"
- HistoryMadeira.txt
- HistoryMadrid.txt
- HistoryMalaysia.txt
- HistoryMallorca.txt
-As you can see above, we were able to narrow down our search even more when we looked with the pattern "HistoryM" as it then only gave us the history files for the places with names starting with M.
+ $ cd non-fiction
+ $ cd OUP
+ $ cd Abernathy
+ $ ls
+ ch1.txt         ch14.txt        ch15.txt        ch2.txt         ch3.txt         ch6.txt         ch7.txt         ch8.txt         ch9.txt
+ $ find . -iname Ch15.txt -exec rm -i {} \; 
+ remove ./ch15.txt? y
+ $ ls
+ ch1.txt         ch14.txt        ch2.txt         ch3.txt         ch6.txt         ch7.txt         ch8.txt         ch9.txt
+```
+In this example, we can see that when we combine the previous option with this one and use "-iname" instead of "-name", the command is not case sensitive and will delete the file that you write, even if you don't know what it's exactly called. This is useful as we can easily delete files and it's faster than finding the file before hand. 
 
-# Option 3: grep -w <"word">
-Source: https://www.ibm.com/docs/en/aix/7.2?topic=g-grep-command#grep__row-d3e144005
 
-Function: This option causes the Grep command to find any file/directory with the word in it and return those file names. It is case sensitive to the word. This is useful when you're looking for a specific type of file/directory and can find it with a specific word.
-
-Example Use 1:
-
-  $ cd berlitz2
-  $ ls|grep -w "History"
-  Algarve-History.txt
-  Amsterdam-History.txt
-  Athens-History.txt
-  Bahamas-History.txt
-  Bali-History.txt
-  Barcelona-History.txt
-  Beijing-History.txt
-  Berlin-History.txt
-  Budapest-History.txt
-  California-History.txt
-  Canada-History.txt
-  CanaryIslands-History.txt
-  Cancun-History.txt
-  China-History.txt
-  Costa-History.txt
-  CostaBlanca-History.txt
-  Crete-History.txt
-  Cuba-History.txt
-  Nepal-History.txt
-  NewOrleans-History.txt
-  Poland-History.txt
-  Portugal-History.txt
-  PuertoRico-History.txt
-  Vallarta-History.txt
-In this example, we can see that all the files with "History" are shown, which would be useful if we're looking for only history files.
-
-Example Use 2:
-
-  $ cd berlitz2
-  $ ls|grep -w "California"
-  California-History.txt
-  California-WhatToDo.txt
-  California-WhereToGo.txt
-In this example, we can see that all the files with "California are shown, which would be useful if we're only looking for information on California.
-
-# Option 4: grep -i <"word">
-Source: https://www.gnu.org/savannah-checkouts/gnu/grep/manual/grep.html
-
-Function: This option causes the Grep command to find any file with the word in it and return those file/directory names. The reason this is different from the last one is that it is not case sensitive in finding. This is useful when you're looking for a specific type of file/directory and can find it with a specific word.
-
-Example Use 1:
-
- $ cd travel_guides
- $ ls|grep -i "Berlitz"
- berlitz1
- berlitz2
-In this example, it found both the directories, even though we searched for the word "Berlitz", which is the capitalized version of the directory. This would very useful if we forget the exact cases of the directories/files we look for.
-
-Example Use 2:
-
- $ cd travel_guides
- $ cd berlitz1
- $ ls|grep -i "history"
- HistoryDublin.txt
- HistoryEdinburgh.txt
- HistoryEgypt.txt
- HistoryFWI.txt
- HistoryFrance.txt
- HistoryGreek.txt
- HistoryHawaii.txt
- HistoryHongKong.txt
- HistoryIbiza.txt
- HistoryIndia.txt
- HistoryIsrael.txt
- HistoryIstanbul.txt
- HistoryItaly.txt
- HistoryJamaica.txt
- HistoryJapan.txt
- HistoryJerusalem.txt
- HistoryLakeDistrict.txt
- HistoryLasVegas.txt
- HistoryMadeira.txt
- HistoryMadrid.txt
- HistoryMalaysia.txt
- HistoryMallorca.txt
-With this example, we can see that it found all the files with the word "history" in it, even though the files actually have the word "History" in them, as it is not case sensitive.
-
-As you can see, those are 4 options with the grep command. They're all very useful in finding files and words, but these are not the only options. Hopefully this was enough information for you to find some files/directories!
+As you can see, those are 4 options with the find command. They're all very useful in finding files and words, but these are not the only options. Hopefully this was enough information for you to find some files/directories!
